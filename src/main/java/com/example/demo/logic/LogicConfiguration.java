@@ -8,11 +8,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportRuntimeHints;
 
 @Configuration(proxyBeanMethods = false)
-@ImportRuntimeHints(LogicConfiguration.DashboardPropsResourcesRegistrar.class)
+@ImportRuntimeHints(LogicConfiguration.AspectRegistrar.class)
 public class LogicConfiguration {
 
     @Bean
-    public HomeService homeService() {
+    public DefaultHomeService homeService() {
         return new DefaultHomeService();
     }
 
@@ -21,7 +21,7 @@ public class LogicConfiguration {
         return new HomeAspect();
     }
 
-    static class DashboardPropsResourcesRegistrar implements RuntimeHintsRegistrar {
+    static class AspectRegistrar implements RuntimeHintsRegistrar {
 
         @Override
         public void registerHints(RuntimeHints hints, ClassLoader classLoader) {
