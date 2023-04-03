@@ -25,6 +25,7 @@ public class LogicConfiguration {
 
         @Override
         public void registerHints(RuntimeHints hints, ClassLoader classLoader) {
+            hints.resources().registerResourceBundle("org.aspectj.weaver.weaver-messages");
             hints.reflection().registerType(
                     HomeAspect.class,
                     builder -> builder.withMembers(MemberCategory.INVOKE_DECLARED_METHODS)

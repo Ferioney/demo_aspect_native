@@ -8,4 +8,8 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface AspectAnnotation {
+
+    String value() default "";
+
+    String name() default "";
 }

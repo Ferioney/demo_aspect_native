@@ -12,7 +12,7 @@ public class HomeAspect {
 
     Logger logger = LoggerFactory.getLogger(HomeAspect.class);
 
-    @Pointcut("@annotation(AspectAnnotation)")
+    @Pointcut("@annotation(com.example.demo.logic.AspectAnnotation)")
     public void point() {}
 
     @Around("point()")
